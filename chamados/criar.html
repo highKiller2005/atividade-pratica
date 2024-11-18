@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form hx-target=".mensagem" hx-encoding="multipart/form-data" hx-post="/atividade-pratica/api/chamados.php">
+        <label for="descricao">Descrição do problema</label>
+        <textarea required id="descricao" name="descricao"></textarea>
+
+        <label for="criticidade">Criticidade</label>
+        <select required name="criticidade" id="criticidade">
+            <option value="1">Baixa</option>
+            <option value="2">Média</option>
+            <option value="3">Alta</option>
+        </select>
+
+        <label for="status">Status</label>
+        <select required name="status" id="status">
+            <option value="1">Aberto</option>
+            <option value="2">Em andamento</option>
+            <option value="3">Resolvido</option>
+        </select>
+        
+        <label for="colaborador_id">Colaborador</label>
+        <select name="colaborador_id" id="colaborador_id" hx-get="/atividade-pratica/api/option_colaborador.php" hx-trigger="load" hx-target="this">
+        </select>
+
+        <label for="cliente_id">Cliente</label>
+        <select name="cliente_id" id="cliente_id" hx-get="/atividade-pratica/api/option_cliente.php" hx-trigger="load" hx-target="this">
+        </select>
+
+        <label for="data-cobertura">Status</label>
+        <input required name="data_abertura" id="data-cobertura" type="date">
+
+        <button>Criar</button>
+    </form>
+
+    <div class="mensagem"></div>
+
+</body>
+</html>

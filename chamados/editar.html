@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="descricao">Descrição do problema</label>
+        <textarea id="descricao" name="descricao"></textarea>
+
+        <label for="criticidade">Criticidade</label>
+        <select name="criticidade" id="criticidade">
+            <option value="1">Baixa</option>
+            <option value="2">Média</option>
+            <option value="3">Alta</option>
+        </select>
+
+        <label for="status">Status</label>
+        <select name="status" id="status">
+            <option value="1">Aberto</option>
+            <option value="2">Em andamento</option>
+            <option value="3">Resolvido</option>
+        </select>
+        
+        <label for="data-cobertura">Status</label>
+        <input name="dataCobertura" id="data-cobertura" type="date">
+
+        <button>Atualizar</button>
+    </form>
+</body>
+</html>
